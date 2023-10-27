@@ -1,87 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site de Química</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="fontawesome/webfonts/">
+
+    <style>
+        /* CSS para esconder o botão de menu por padrão */
+        #menu-button {
+            display: none;
+        }
+
+        /* CSS para esconder o menu quando a tela for menor que 768px */
+        @media (max-width: 768px) {
+            #menu {
+                display: none;
+            }
+
+            /* CSS para mostrar o botão de menu quando o menu estiver oculto */
+            #menu-button {
+                display: block;
+            }
+        }
+
+        #estrutura_atomica {
+            display: none;
+        }
+
+        #ligações_quimicas {
+            display: none;
+        }
+
+    </style>
 </head>
+
 <body class="bg-success-subtle">
     <div class="main bg-success">
         <div class="row">
             <div class="col-5">
                 <h1 class="ms-5">Química</h1>
             </div>
-            <div class="col-7 mt-2">
+            <div class="col-6 mt-2" id="menu">
                 <a class="btn" href="">Inicio</a>
-                <a class="btn" href="">Estrutura Atômica</a>
-                <a class="btn" href="">Tabela Periódica</a>
-                <a class="btn" href="">Ligações Químicas</a>
-                <a class="btn" href="">Estequiometria</a>
-                <a class="btn" href="">Termoquímica</a>
+                <a class="btn" href="#" id="mostrarDiv">Estrutura Atômica</a>
+                <!-- <a class="btn" href="">Tabela Periódica</a> -->
+                <a class="btn" href="#" id="mostrarLigacoesQuimicas">Ligações Químicas</a>
+                <a class="btn" href="#" id="mostrarDiv">Estequiometria</a>
+                <a class="btn" href="#" id="mostrarDiv">Termoquímica</a>
             </div>
+            <button id="menu-button" class="btn col-6" onclick="toggleMenu()"><i class="fa-solid fa-bars"
+                    style="color: #000000;"></i></button>
         </div>
     </div>
 
-    <div class="container" id="estrutura_atomica" style="overflow: hidden; width:40em; border:1px; white-space:overflow;">
+
+    <div class="container" id="estrutura_atomica"
+        style="overflow: hidden; width:40em; border:1px; white-space:overflow;">
+
+        <h2 class="mt-5">Estrutura Atômica</h2>
+        <br>
         <div class="my-2">
             <h3>Estrutura Atômica:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Os átomos são as unidades fundamentais da matéria e são compostos por três partículas subatômicas principais: prótons, nêutrons e elétrons.</p>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Prótons e nêutrons estão localizados no núcleo do átomo, enquanto elétrons orbitam ao redor do núcleo em níveis de energia.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Os átomos são as unidades fundamentais da matéria e são
+                compostos por três partículas subatômicas principais: prótons, nêutrons e elétrons.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Prótons e nêutrons estão localizados no núcleo do átomo,
+                enquanto elétrons orbitam ao redor do núcleo em níveis de energia.</p>
         </div>
 
         <div class="my-2">
             <h3>Prótons, Nêutrons e Elétrons:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Prótons têm carga positiva e determinam o número atômico de um átomo. Cada elemento químico tem um número único de prótons em seu núcleo.</p>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Nêutrons têm carga neutra e afetam a massa do átomo. A soma dos prótons e nêutrons é chamada de massa atômica.</p>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Elétrons têm carga negativa e estão distribuídos em camadas ou níveis de energia ao redor do núcleo.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Prótons têm carga positiva e determinam o número atômico de
+                um átomo. Cada elemento químico tem um número único de prótons em seu núcleo.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Nêutrons têm carga neutra e afetam a massa do átomo. A soma
+                dos prótons e nêutrons é chamada de massa atômica.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Elétrons têm carga negativa e estão distribuídos em camadas
+                ou níveis de energia ao redor do núcleo.</p>
         </div>
 
         <div class="my-2">
             <h3>Modelo de Bohr:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> O modelo de Bohr descreve a distribuição de elétrons em níveis de energia. Cada nível de energia pode conter um número máximo de elétrons.</p>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Os elétrons em níveis externos, chamados de camada de valência, são os responsáveis pelas propriedades químicas de um elemento.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> O modelo de Bohr descreve a distribuição de elétrons em
+                níveis de energia. Cada nível de energia pode conter um número máximo de elétrons.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Os elétrons em níveis externos, chamados de camada de
+                valência, são os responsáveis pelas propriedades químicas de um elemento.</p>
         </div>
 
         <div class="my-2">
             <h3>Distribuição Eletrônica:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> A distribuição eletrônica é uma maneira de representar a localização dos elétrons em torno do núcleo. Usa-se a notação de números quânticos e diagramas de elétrons.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> A distribuição eletrônica é uma maneira de representar a
+                localização dos elétrons em torno do núcleo. Usa-se a notação de números quânticos e diagramas de
+                elétrons.</p>
         </div>
 
         <div class="my-2">
             <h3>Estrutura de Subníveis Eletrônicos:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Os subníveis eletrônicos (s, p, d, f) são subdivisões dos níveis de energia e determinam a forma como os elétrons são distribuídos nos átomos.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Os subníveis eletrônicos (s, p, d, f) são subdivisões dos
+                níveis de energia e determinam a forma como os elétrons são distribuídos nos átomos.</p>
         </div>
 
         <div class="my-2">
             <h3>Tabela Periódica:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> A Tabela Periódica organiza os elementos químicos com base em seu número atômico e configuração eletrônica. Isso ajuda a entender as tendências periódicas nas propriedades dos elementos.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> A Tabela Periódica organiza os elementos químicos com base
+                em seu número atômico e configuração eletrônica. Isso ajuda a entender as tendências periódicas nas
+                propriedades dos elementos.</p>
         </div>
 
         <div class="my-2">
             <h3>Ligações Químicas:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique como a estrutura atômica influencia a formação de ligações químicas, como ligações iônicas e covalentes.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique como a estrutura atômica influencia a formação de
+                ligações químicas, como ligações iônicas e covalentes.</p>
         </div>
 
         <div class="my-2">
             <h3>Isótopos:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Aborde o conceito de isótopos, que são átomos de um elemento com o mesmo número de prótons, mas diferentes números de nêutrons.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Aborde o conceito de isótopos, que são átomos de um
+                elemento com o mesmo número de prótons, mas diferentes números de nêutrons.</p>
         </div>
 
         <div class="my-2">
             <h3>Modelos Atômicos Evolutivos:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Mencione brevemente a evolução dos modelos atômicos, desde o modelo de Dalton até o modelo atual baseado na mecânica quântica.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Mencione brevemente a evolução dos modelos atômicos, desde
+                o modelo de Dalton até o modelo atual baseado na mecânica quântica.</p>
         </div>
 
         <div class="my-2">
             <h3>Aplicações Práticas:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Discuta como o entendimento da estrutura atômica é fundamental em áreas como química, física e ciências materiais.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Discuta como o entendimento da estrutura atômica é
+                fundamental em áreas como química, física e ciências materiais.</p>
         </div>
     </div>
 
-    <div class="container bg-success bg-opacity-25">
+    <div class="container" id="ligações_quimicas" style="overflow: hidden; width:40em; border:1px; white-space:overflow;">
+        <h2 class="mt-5">Ligações Químicas</h2>
+        <br>
+        <h3>Introdução às Ligações Químicas:</h3>
+        <p><i class="bi bi-arrow-right-circle-fill"></i> As ligações químicas são interações que mantêm os átomos unidos
+            em moléculas e compostos químicos. Elas são essenciais para entender como os elementos se combinam para
+            formar substâncias.</p>
+
+        <div class="my-2">
+            <h3>Tipos Principais de Ligações:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Descreva os três tipos principais de ligações químicas: ligação iônica, ligação covalente e ligação metálica.</p>
+        </div>
+        
+        <div class="my-2">
+            <h3>Ligação Iônica:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique como a ligação iônica ocorre quando átomos transferem elétrons para formar íons com cargas opostas, que se atraem e se combinam para formar compostos iônicos.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Ligação Covalente:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Aborde a ligação covalente, onde átomos compartilham elétrons para alcançar estabilidade eletrônica. Isso resulta na formação de moléculas.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Ligação Metálica:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Descreva a ligação metálica, que é característica dos metais. Os elétrons de valência estão livres para se mover, criando uma "nuvem" de elétrons que mantém os átomos juntos.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Polaridade:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Explicite o conceito de polaridade em ligações covalentes, que se refere à distribuição desigual de elétrons na molécula, criando polos positivos e negativos.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Forças Intermoleculares:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Discuta as forças intermoleculares, como dipolo-dipolo, forças de dispersão de London e pontes de hidrogênio, que afetam as propriedades físicas das substâncias.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Geometria Molecular:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Fale sobre como a geometria molecular está relacionada à disposição dos átomos em uma molécula, o que influencia suas propriedades.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Resonância:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique o conceito de ressonância em ligações covalentes, onde várias estruturas de Lewis podem representar a mesma molécula.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Exemplos de Compostos:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Dê exemplos de compostos que ilustrem os diferentes tipos de ligações químicas, como NaCl (ligação iônica), H2O (ligação covalente) e Cu (ligação metálica).</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Aplicações e Importância:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Mostre como o entendimento das ligações químicas é fundamental em áreas como química orgânica, bioquímica, farmacologia e engenharia química.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Dicas e Truques:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Ofereça dicas e truques para compreender as ligações químicas, como regras do octeto e hibridização.</p>
+        </div>
+
+        <div class="my-2">
+            <h3>Exercícios Práticos:</h3>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Inclua exercícios práticos ou problemas para que os visitantes do seu site possam praticar e aplicar seus conhecimentos sobre ligações químicas.</p>
+        </div>
 
     </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
