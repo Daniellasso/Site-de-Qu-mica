@@ -62,8 +62,7 @@ document.getElementById("mostrarDiv").addEventListener("click", function() {
 
 document.getElementById("mostrarLigacoesQuimicas").addEventListener("click", function() {
     // Obtém a div com o id "ligações_quimicas"
-    let divLigacoesQuimicas = document.getElementById("ligações_quimicas");
-    
+    let divLigacoesQuimicas = document.getElementById("ligações_quimicas")
     // Verifica se a div está oculta
     if (divLigacoesQuimicas.style.display === "none") {
         // Mostra a div

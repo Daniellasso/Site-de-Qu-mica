@@ -28,6 +28,7 @@
             }
         }
 
+        
         #estrutura_atomica {
             display: none;
         }
@@ -36,6 +37,19 @@
             display: none;
         }
 
+        .lateral {
+            float: left;
+            /* Alinhar à esquerda */
+            margin-right: 20px;
+            /* Espaço à direita da imagem */
+        }
+
+        .segunda_lateral {
+            float: right;
+            /* Alinhar à direita */
+            margin-left: 20px;
+            /* Espaço à esquerda da imagem */
+        }
     </style>
 </head>
 
@@ -43,24 +57,33 @@
     <div class="main bg-success">
         <div class="row">
             <div class="col-5">
-                <h1 class="ms-5">Química</h1>
+                <h1 class="ms-5" style="color: #FFF;">Química</h1>
             </div>
             <div class="col-6 mt-2" id="menu">
-                <a class="btn" href="">Inicio</a>
-                <a class="btn" href="#" id="mostrarDiv">Estrutura Atômica</a>
-                <!-- <a class="btn" href="">Tabela Periódica</a> -->
-                <a class="btn" href="#" id="mostrarLigacoesQuimicas">Ligações Químicas</a>
-                <a class="btn" href="#" id="mostrarDiv">Estequiometria</a>
-                <a class="btn" href="#" id="mostrarDiv">Termoquímica</a>
+                <a class="btn" style="color: #FFF;" href="#">Inicio</a>
+                <a class="btn" style="color: #FFF;" href="#" id="mostrarDiv">Estrutura Atômica</a>
+                <!-- <a class= style="color: #FFF;""btn" href="">Tabela Periódica</a> -->
+                <a class="btn" style="color: #FFF;" href="#" id="mostrarLigacoesQuimicas">Ligações Químicas</a>
+                <a class="btn" style="color: #FFF;" href="#" id="mostrarDiv">Estequiometria</a>
+                <a class="btn" style="color: #FFF;" href="#" id="mostrarDiv">Termoquímica</a>
             </div>
             <button id="menu-button" class="btn col-6" onclick="toggleMenu()"><i class="fa-solid fa-bars"
-                    style="color: #000000;"></i></button>
+                style="color: #000000;"></i></button>
+            </div>
         </div>
-    </div>
-
-
-    <div class="container" id="estrutura_atomica"
-        style="overflow: hidden; width:40em; border:1px; white-space:overflow;">
+        
+        
+        <div class="lateral">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFiXqlhb0GP0MZrO0bdjiDHy3fYDMmAxVxkw&usqp=CAU"
+            height="678px" width="450px">
+        </div>
+        
+        <div class="segunda_lateral">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFiXqlhb0GP0MZrO0bdjiDHy3fYDMmAxVxkw&usqp=CAU"
+                height="678px" width="450px">
+        </div>
+        <div class="container" id="estrutura_atomica"
+        style="overflow: hidden; width: 40em; border: 1px; white-space: overflow;">
 
         <h2 class="mt-5">Estrutura Atômica</h2>
         <br>
@@ -135,7 +158,8 @@
         </div>
     </div>
 
-    <div class="container" id="ligações_quimicas" style="overflow: hidden; width:40em; border:1px; white-space:overflow;">
+    <div class="container" id="ligações_quimicas"
+        style="overflow: hidden; width: 40em; border: 1px; white-space: overflow;">
         <h2 class="mt-5">Ligações Químicas</h2>
         <br>
         <h3>Introdução às Ligações Químicas:</h3>
@@ -145,65 +169,81 @@
 
         <div class="my-2">
             <h3>Tipos Principais de Ligações:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Descreva os três tipos principais de ligações químicas: ligação iônica, ligação covalente e ligação metálica.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Descreva os três tipos principais de ligações químicas:
+                ligação iônica, ligação covalente e ligação metálica.</p>
         </div>
-        
+
         <div class="my-2">
             <h3>Ligação Iônica:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique como a ligação iônica ocorre quando átomos transferem elétrons para formar íons com cargas opostas, que se atraem e se combinam para formar compostos iônicos.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique como a ligação iônica ocorre quando átomos
+                transferem elétrons para formar íons com cargas opostas, que se atraem e se combinam para formar
+                compostos iônicos.</p>
         </div>
 
         <div class="my-2">
             <h3>Ligação Covalente:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Aborde a ligação covalente, onde átomos compartilham elétrons para alcançar estabilidade eletrônica. Isso resulta na formação de moléculas.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Aborde a ligação covalente, onde átomos compartilham
+                elétrons para alcançar estabilidade eletrônica. Isso resulta na formação de moléculas.</p>
         </div>
 
         <div class="my-2">
             <h3>Ligação Metálica:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Descreva a ligação metálica, que é característica dos metais. Os elétrons de valência estão livres para se mover, criando uma "nuvem" de elétrons que mantém os átomos juntos.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Descreva a ligação metálica, que é característica dos
+                metais. Os elétrons de valência estão livres para se mover, criando uma "nuvem" de elétrons que mantém
+                os átomos juntos.</p>
         </div>
 
         <div class="my-2">
             <h3>Polaridade:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Explicite o conceito de polaridade em ligações covalentes, que se refere à distribuição desigual de elétrons na molécula, criando polos positivos e negativos.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Explicite o conceito de polaridade em ligações covalentes,
+                que se refere à distribuição desigual de elétrons na molécula, criando polos positivos e negativos.</p>
         </div>
 
         <div class="my-2">
             <h3>Forças Intermoleculares:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Discuta as forças intermoleculares, como dipolo-dipolo, forças de dispersão de London e pontes de hidrogênio, que afetam as propriedades físicas das substâncias.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Discuta as forças intermoleculares, como dipolo-dipolo,
+                forças de dispersão de London e pontes de hidrogênio, que afetam as propriedades físicas das
+                substâncias.</p>
         </div>
 
         <div class="my-2">
             <h3>Geometria Molecular:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Fale sobre como a geometria molecular está relacionada à disposição dos átomos em uma molécula, o que influencia suas propriedades.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Fale sobre como a geometria molecular está relacionada à
+                disposição dos átomos em uma molécula, o que influencia suas propriedades.</p>
         </div>
 
         <div class="my-2">
             <h3>Resonância:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique o conceito de ressonância em ligações covalentes, onde várias estruturas de Lewis podem representar a mesma molécula.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Explique o conceito de ressonância em ligações covalentes,
+                onde várias estruturas de Lewis podem representar a mesma molécula.</p>
         </div>
 
         <div class="my-2">
             <h3>Exemplos de Compostos:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Dê exemplos de compostos que ilustrem os diferentes tipos de ligações químicas, como NaCl (ligação iônica), H2O (ligação covalente) e Cu (ligação metálica).</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Dê exemplos de compostos que ilustrem os diferentes tipos
+                de ligações químicas, como NaCl (ligação iônica), H2O (ligação covalente) e Cu (ligação metálica).</p>
         </div>
 
         <div class="my-2">
             <h3>Aplicações e Importância:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Mostre como o entendimento das ligações químicas é fundamental em áreas como química orgânica, bioquímica, farmacologia e engenharia química.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Mostre como o entendimento das ligações químicas é
+                fundamental em áreas como química orgânica, bioquímica, farmacologia e engenharia química.</p>
         </div>
 
         <div class="my-2">
             <h3>Dicas e Truques:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Ofereça dicas e truques para compreender as ligações químicas, como regras do octeto e hibridização.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Ofereça dicas e truques para compreender as ligações
+                químicas, como regras do octeto e hibridização.</p>
         </div>
 
         <div class="my-2">
             <h3>Exercícios Práticos:</h3>
-            <p><i class="bi bi-arrow-right-circle-fill"></i> Inclua exercícios práticos ou problemas para que os visitantes do seu site possam praticar e aplicar seus conhecimentos sobre ligações químicas.</p>
+            <p><i class="bi bi-arrow-right-circle-fill"></i> Inclua exercícios práticos ou problemas para que os
+                visitantes do seu site possam praticar e aplicar seus conhecimentos sobre ligações químicas.</p>
         </div>
 
     </div>
+
 
     <script src="script.js"></script>
 </body>
